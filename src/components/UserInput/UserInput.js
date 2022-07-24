@@ -27,6 +27,11 @@ function UserInput(props) {
     return Number(currentAge) < 0;
   };
 
+  const clearInputFields = () => {
+    setNewName("");
+    setNewAge("");
+  };
+
   const sendFormData = (event) => {
     event.preventDefault();
     if (invalidInputs()) {
@@ -42,22 +47,27 @@ function UserInput(props) {
       age: currentAge,
     };
     props.onSubmitNewUser(newUser);
+    clearInputFields();
   };
 
   return (
     <div className="user-input__container card">
-      <form onSubmit={sendFormData}>
+      <form className="form" onSubmit={sendFormData}>
         <div className="input-form">
           <div className="un-field">
             <label>UserName</label>
-            <input type="text" onChange={nameChangeHandler} />
+            <input
+              type="text"
+              onChange={nameChangeHandler}
+              value={currentName}
+            />
           </div>
           <div className="age-field">
             <label>Age</label>
-            <input type="text" onChange={ageChangeHandler} />
+            <input type="text" onChange={ageChangeHandler} value={currentAge} />
           </div>
         </div>
-        <Button />
+        <Button buttonText={"Add User"} />
       </form>
     </div>
   );

@@ -1,0 +1,8 @@
+.users-list,
+.no-users {
+  margin: 2rem auto;
+}
+
+.no-users {
+  padding: 0.5rem;
+}

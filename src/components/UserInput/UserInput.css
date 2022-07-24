@@ -1,0 +1,21 @@
+.user-input__container {
+  margin: 5rem auto 0;
+}
+
+.user-input__container label {
+  font-weight: 500;
+}
+
+.input-form,
+.un-field,
+.age-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  gap: 0.5rem;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+}
